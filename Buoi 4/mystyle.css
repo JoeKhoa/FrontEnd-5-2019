@@ -3,6 +3,8 @@
     height: 70px;
     padding-right: 20%;
     padding-left: 20%;
+    position: fixed;
+    z-index: 9999;
 }
 
 body {
@@ -47,6 +49,7 @@ body {
     padding: 0px;
     background-color: #3A454F;
     display: none;
+    z-index: 1000;
 }
 
 .parent-li:hover .child-ul{
@@ -60,4 +63,123 @@ body {
 .child-li {
     list-style-type: none;
     padding: 10px;
+}
+
+.body-content {
+    padding-right: 20%;
+    padding-left: 20%;
+    padding-top: 90px;
+    background-color: #2B3844;
+    min-height: 1000px;
+}
+
+.body-content .slide {
+    background-color: #F18F3C;
+    height: 250px;
+    padding: 25px 35px 25px 35px;
+    position: relative;
+    border-bottom: solid black 7px;
+}
+
+.chart {
+    float: right;
+}
+
+
+.slide-content {
+    color: white;
+}
+
+.slide-icon {
+    background-color: black;
+    color: white;
+    display: inline-block;
+    height: 20px;
+    width: 80px;
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+}
+
+.slide-icon li {
+    list-style-type: none;
+    float: left;
+    margin-left: 5px;
+}
+
+.slide-icon ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.slide-icon i {
+    font-size: 10px;
+}
+
+.button-left {
+    background-color: black;
+    color: white;
+    width: 20px;
+    height: 30px;
+    position: relative;
+}
+
+.wrapper-button-left {
+    position: absolute;
+    left: 0px;
+    top: 150px;
+}
+.button-left i {
+    position: absolute;
+    top: 7px;
+    left: 4px;
+}
+
+.button-right {
+    background-color: black;
+    color: white;
+    width: 20px;
+    height: 30px;
+    position: relative;
+}
+
+.wrapper-button-right {
+    position: absolute;
+    right: 0px;
+    top: 150px;
+}
+.button-right i {
+    position: absolute;
+    top: 7px;
+    right: 4px;
+}
+
+.my-fa {
+    border-radius: 50%;
+    background-color: white;
+    display: block;
+    height: 20px;
+    width: 20px;
+}
+
+hr {
+    margin-top: 10px;
+    border: solid 1px #3A454F;
+    box-shadow: 1px 1px 1px black;
+}
+
+.box {
+    color: white;
+    width: 33.33%;
+    float: left;
+    margin-top: 20px;
+}
+
+.box-icon {
+    float: left;
+}
+
+.box-text {
+    padding-top: 5px;
+    padding-left: 60px;
 }
