@@ -1,0 +1,300 @@
+body{
+    margin:0px;
+}
+
+.clear {
+    clear: both;
+}
+
+.header {
+    background-color: #FFFFFF;
+    height: 150px;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 10px;
+}
+
+.header .header-menu {
+    width: 80%;
+    margin: auto;
+}
+
+.header .header-menu li {
+    list-style-type: none;
+    float: left;
+    padding-left: 20px;
+}
+
+.header .header-menu a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-top: 0px;
+}
+
+.header-bottom {
+    margin-top: 50px;
+}
+
+.header-bottom div {
+    float: left;
+    width: 33.33%;
+}
+
+.header-bottom .logo {
+    text-align: center;
+}
+
+.header-bottom .link-right {
+    text-align: right;
+}
+
+.header-bottom .link-right button{
+    background-color: red;
+    color: white;
+    width: 120px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.header-bottom .link-right a{
+    text-decoration: none;
+    color: red;
+}
+
+.mid-menu {
+    background-color: #4D4D4D;
+    height: 50px;
+    padding-left: 15%;
+    padding-right: 15%;
+    
+}
+
+.mid-menu .menu-center {
+    height: 100%;
+    text-align: center;
+}
+
+.mid-menu ul {
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.mid-menu li {
+    list-style-type: none;
+    display: inline;
+    color: white;
+    padding-left: 20px;
+}
+
+.mid-menu li:before {
+    content: '';
+    height: 100%;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.mid-menu li:not(:last-child):after {
+    content: '';
+    background: url("sep.png") no-repeat;
+    display: inline-block;
+    width: 20px;
+    height: 35%;
+    margin-left:30px;
+    vertical-align: middle;
+}
+
+.slide {
+    position: relative;
+}
+
+.slide img {
+    height: 400px;
+    width: 100%;
+}
+.slide h1 {
+    text-align: center;
+}
+.div-h {
+    position: absolute;
+    top: 20px;
+    z-index: 9999;
+    color: white;
+    width: 100%;
+}
+
+.slide .box {
+    width: 150px;
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+
+.box span {
+    vertical-align: center;
+}
+
+.slide .box-1 {
+    top: 120px;
+    left: 45%;
+}
+
+.slide .box-2 {
+    top: 155px;
+    left: 45%;
+}
+
+.slide .box-3 {
+    top: 190px;
+    left: 45%;
+}
+
+button {
+    background-color: red;
+    color: white;
+    width: 120px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.slide-banner {
+    position: absolute;
+    display: inline-block;
+    bottom: 0px;
+    width: 50%;
+    height: 80px;
+    z-index: 99999;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.slide h4 {
+    margin: 0px;
+}
+
+.slide-banner button {
+    float: right;
+    margin-right: 30px;
+}
+
+.text-h {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.slide-banner p {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 0;
+}
+
+.content {
+    height: 370px;
+    position: relative;
+}
+
+.content-bottom {
+    position: absolute;
+    bottom: 100px;
+    width: 40%;
+    height: 50px;
+    z-index: 99999;
+    background-color: #F7F7F7;
+    border-top: 1px rgb(226, 223, 216) solid;
+    border-left: 1px rgb(226, 223, 216) solid;
+    border-right: 1px rgb(226, 223, 216) solid;
+    border-radius: 10px 10px 0px 0px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.content-bottom h3 {
+    text-align: center;
+}
+
+.bottom {
+    height: 100px;
+    width: 100%;
+    background-color: #F7F7F7;
+    border-top: 1px rgb(226, 223, 216) solid;
+    position: absolute;
+    bottom: 0px;
+}
+
+.div-center {
+    padding: 30px 15% 30px 15%;
+    width: 50%;
+    margin: auto;
+}
+
+.div-center input {
+    width: 80%;
+    height: 30px;
+}
+
+.div-center button {
+    height: 30px !important;
+}
+
+.div-center input::placeholder {
+    font-size: 17px;
+    font-style: italic;
+}
+
+.footer {
+    text-align: center;
+    height: 42px;
+    background-color: #474747;
+    color: white;
+    font-size: 13px;
+    padding-top: 4px;
+}
+
+.content-wrapper{
+    width: 50%;
+    margin: auto;
+}
+
+.content-box {
+    width: 33.33%;
+    float: left;
+}
+
+.content-box .content-logo {
+    float: left;
+}
+
+.content-box .content-logo img {
+    width: 86px;
+    height: 72px;
+}
+
+.content-box .content-head {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.content-box .content-title {
+    font-size: 25px;
+}
+
+.content-box p {
+    font-size: 12px;
+}
