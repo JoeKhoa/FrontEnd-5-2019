@@ -1,0 +1,18 @@
+li {
+    float: left;
+    list-style-type: none;
+    background-color: blue;
+    margin-left: 20px;
+}
+
+.clear {
+    clear: both;
+}
+
+#content2 {
+    display: none;
+}
+
+#tab1 {
+    background-color: yellow;
+}

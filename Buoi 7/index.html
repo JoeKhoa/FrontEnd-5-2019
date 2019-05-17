@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="myscript.js"></script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li onclick="myFn('content1', 'tab1')" id="tab1" class="tab">tab 1</li>
+            <li onclick="myFn('content2', 'tab2')" id="tab2" class="tab">tab 2</li>
+        </ul>
+        <div class="clear">
+                <p id="content1" class="content">content of tab 1</p>
+                <p id="content2" class="content">content of tab 2</p>
+        </div>
+        
+        </div>
+    </div>
+    <script>
+        function myFn(tabContent, tabName) {
+            var content = document.getElementsByClassName('content');
+            for(var i = 0; i < content.length; i++) {
+                content[i].style.display = 'none';
+            }
+            var blockContent = document.getElementById(tabContent);
+            blockContent.style.display = 'block';
+
+            var tab = document.getElementsByClassName('tab');
+            for(var i = 0; i< tab.length; i++) {
+                tab[i].style.backgroundColor = 'blue';
+            }
+
+            var tabActive = document.getElementById(tabName);
+            tabActive.style.backgroundColor = 'yellow';
+
+        }
+    
+    </script>
+</body>
+</html>
