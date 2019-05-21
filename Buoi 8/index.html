@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="content"/>
+    <button onclick="addText()">Add</button>
+    <ul id="list">
+        
+    </ul>
+
+    <script>
+        function addText() {
+            var valueText = document.getElementById('content').value;
+            document.getElementById('content').value = '';
+            var liTag = document.createElement('LI');
+            liTag.appendChild(document.createTextNode(valueText));
+            var buttonTag = document.createElement('BUTTON');
+            buttonTag.appendChild(document.createTextNode('x'));
+            liTag.appendChild(buttonTag);
+            
+            document.getElementById('list').appendChild(liTag);
+            var lastButton = document.getElementById('list').lastChild.lastChild;
+            lastButton.addEventListener('click', remove);
+        }
+
+        function remove() {
+            document.getElementById('list').removeChild(this.parentNode);
+        }
+        
+    </script>
+
+</body>
+</html>

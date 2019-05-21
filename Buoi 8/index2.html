@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .slideItem {
+            background-color: blue;
+            height: 300px;
+            width: 500px;
+        }
+
+        #slide2 {
+            display: none;
+        }
+
+        #slide3 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideItem" id="slide1">
+        Slide 1
+    </div>
+    <div class="slideItem" id="slide2">
+        Slide 2
+    </div>
+    <div class="slideItem" id="slide3">
+        Slide 3
+    </div>
+
+    <button onclick="preSlide()"><</button>
+    <button onclick="nextSlide()">></button>
+
+    <script>
+        var currentSlide = 1;
+        function nextSlide() {
+            
+            if (currentSlide != 3) {
+                currentSlide++;
+            }
+            else {
+                currentSlide = 1;
+            }
+
+            var allSlide = document.getElementsByClassName('slideItem');
+            for(var i = 0; i < allSlide.length; i++) {
+                allSlide[i].style.display = "none";
+            }
+            var slide2 = document.getElementById('slide' + currentSlide);
+            slide2.style.display = "block";
+        }
+        function preSlide() {
+            if (currentSlide != 1) {
+                currentSlide--;
+            }
+            else {
+                currentSlide = 3;
+            }
+
+            var allSlide = document.getElementsByClassName('slideItem');
+            for(var i = 0; i < allSlide.length; i++) {
+                allSlide[i].style.display = "none";
+            }
+            var slide2 = document.getElementById('slide' + currentSlide);
+            slide2.style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
