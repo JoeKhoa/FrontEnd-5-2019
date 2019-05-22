@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .abc {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="content"/>
+    <button id="btnAdd">Add</button>
+    <ul id="list">
+        
+    </ul>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#btnAdd').click(function(){
+                if ($('#content').val() != '') {
+                    $('#list').append('<li class="abc">' + $('#content').val() + '<button class="btnDelete">x</button></li>');
+                    $('.btnDelete').last().click(function(){
+                        $(this).parent().remove();
+                    });
+                    $('#content').val('');
+                }
+            });
+            $('#content').keyup(function(event) {
+                
+                if (event.keyCode == 13) {
+                    if ($('#content').val() != '') {
+                        $('#list').append('<li>' + $('#content').val() + '<button class="btnDelete">x</button></li>');
+                        $('.btnDelete').last().click(function(){
+                            $(this).parent().remove();
+                        });
+                        $('#content').val('');
+                    }
+                }
+            })
+            
+        });
+    </script>
+
+</body>
+</html>

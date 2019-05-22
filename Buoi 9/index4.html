@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .slideItem {
+            background-color: blue;
+            height: 300px;
+            width: 500px;
+        }
+
+        #slide2 {
+            display: none;
+        }
+
+        #slide3 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideItem" id="slide1" style="background-color: red;">
+        Slide 1
+    </div>
+    <div class="slideItem" id="slide2" style="background-color: orange">
+        Slide 2
+    </div>
+    <div class="slideItem" id="slide3">
+        Slide 3
+    </div>
+
+    <button id="prevBtn"><</button>
+    <button id="nextBtn">></button>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            setInterval(function(){
+                if (currentSlide != 3) {
+                    currentSlide++;
+                }
+                else {
+                    currentSlide = 1;
+                }
+                $('.slideItem').hide();
+                $('#slide' + currentSlide).show();
+            }, 3000);
+            var currentSlide = 1;
+            $('#prevBtn').click(function(){
+                if (currentSlide != 1) {
+                    currentSlide--;
+                }
+                else {
+                    currentSlide = 3;
+                }
+                $('.slideItem').hide();
+                $('#slide' + currentSlide).show();
+            });
+            $('#nextBtn').click(function(){
+                if (currentSlide != 3) {
+                    currentSlide++;
+                }
+                else {
+                    currentSlide = 1;
+                }
+                $('.slideItem').hide();
+                $('#slide' + currentSlide).show();
+            });
+        });
+    </script>
+
+</body>
+</html>
