@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #bar {
+            background-color: gray;
+            height: 25px;
+            width: 50%;
+            position: relative;
+            border-radius: 10px;
+        }
+        #progress {
+            background-color: green;
+            height: 25px;
+            width: 0%;
+            border-radius: 10px;
+        }
+        #textProgress {
+            position: absolute;
+            /* top: 0px; */
+            left: 40%;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div id="bar">
+        <span id="textProgress">Loading resources 0%</span>
+        <div id="progress">
+            
+        </div>
+    </div>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var percen = 0;
+            var interval = setInterval(function(){
+                if (percen != 100) {
+                    percen += 10;
+                }
+                else {
+                    $("#bar").hide();
+                    clearInterval(interval);
+                }
+                $("#progress").width(percen + "%");
+                $("#textProgress").text("Loading resources " + percen + "%");
+                
+            }, 100)
+        });
+    </script>
+
+</body>
+</html>
