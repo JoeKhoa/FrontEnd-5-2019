@@ -1,0 +1,57 @@
+.liMenu {
+    float: left;
+    list-style-type: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    border-bottom: solid 1px red;
+}
+
+.clear {
+    clear: both;
+}
+
+.slideBox {
+    float: left;
+    margin-right: 20px;
+}
+
+.priceNew {
+    font-size: 18px;
+    color: red;
+}
+
+.priceOld {
+    text-decoration: line-through;
+}
+
+.myStar {
+    color: #F3993E;
+    font-size: 10px;
+    float: right;
+}
+
+.description {
+    padding: 10px;
+}
+
+.boxImg {
+    position: relative;
+}
+
+.addToCart {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 40px;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    vertical-align: middle;
+    display: none;
+}
+
+#itemBox4 {
+    display: none;
+}

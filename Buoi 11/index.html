@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var slide = 1;
+            $(".boxImg").mouseover(function(){
+                $(this).children(".addToCart").show( "slide", { direction: "down" }, 500);
+            });
+            $(".boxImg").mouseout(function(){
+                $(this).children(".addToCart").hide( "slide", { direction: "down" }, 500);
+            });
+            $(".next").click(function(){
+                if(slide != 2) {
+                    slide++;
+                }
+                else {
+                    slide = 1;
+                }
+                $(".slideBox").hide();
+                $("#itemBox" + slide).show();
+                $("#itemBox" + (slide + 1)).show();
+                $("#itemBox" + (slide + 2)).show();
+            });
+            $(".prev").click(function(){
+                if(slide != 1) {
+                    slide--;
+                }
+                else {
+                    slide = 2;
+                }
+                $(".slideBox").hide();
+                $("#itemBox" + slide).show();
+                $("#itemBox" + (slide + 1)).show();
+                $("#itemBox" + (slide + 2)).show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li class="liMenu">BEST SELLER</li>
+            <li class="liMenu">ON SALE</li>
+            <li class="liMenu">NEW PRODUCTS</li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <div>
+        <div>
+            <div>
+                <button class="prev"><</button>
+                <button class="next">></button>
+            </div>
+            <div class="slideBox" id="itemBox1">
+                <div class="boxImg">
+                    <img src="http://kute-themes.com/html/kuteshop/html/images/media/index1/sellers1.jpg"/>
+                    <div class="addToCart">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </div>
+                </div>
+                <div class="description">
+                    <p style="text-align: center">Product Name 1</p>
+                    <span class="priceNew">$45.00</span>
+                    <span class="priceOld">$52.00</span>
+                    <div class="myStar">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="slideBox" id="itemBox2">
+                <div class="boxImg">
+                    <img src="http://kute-themes.com/html/kuteshop/html/images/media/index1/sellers2.jpg"/>
+                    <div class="addToCart">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </div>
+                </div>
+                <div class="description">
+                    <p style="text-align: center">Product Name 2</p>
+                    <span class="priceNew">$45.00</span>
+                    <span class="priceOld">$52.00</span>
+                    <div class="myStar">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="slideBox" id="itemBox3">
+                <div class="boxImg">
+                    <img src="http://kute-themes.com/html/kuteshop/html/images/media/index1/sellers3.jpg"/>
+                    <div class="addToCart">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </div>
+                </div>
+                <div class="description">
+                    <p style="text-align: center">Product Name 3</p>
+                    <span class="priceNew">$45.00</span>
+                    <span class="priceOld">$52.00</span>
+                    <div class="myStar">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="slideBox" id="itemBox4">
+                <div class="boxImg">
+                    <img src="http://kute-themes.com/html/kuteshop/html/images/media/index1/sellers3.jpg"/>
+                    <div class="addToCart">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </div>
+                </div>
+                <div class="description">
+                    <p style="text-align: center">Product Name 4</p>
+                    <span class="priceNew">$45.00</span>
+                    <span class="priceOld">$52.00</span>
+                    <div class="myStar">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
