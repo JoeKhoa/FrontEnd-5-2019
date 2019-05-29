@@ -1,0 +1,19 @@
+.box {
+    width: 50%;
+    float: left;
+}
+
+.img {
+    width: 40%;
+    float: left;
+}
+
+.content {
+    width: 60%;
+    float:left;
+}
+
+.img img {
+    height: 300px;
+    width: 100%;
+}
