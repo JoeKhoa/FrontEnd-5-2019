@@ -11,44 +11,67 @@
     <script src="jquery-3.4.1.min.js"></script>
     <script>
         $(document).ready(function(){
-            $.ajax({
-                url: 'https://5ceaab4b0c871100140bf6ed.mockapi.io/products',
-                type: 'GET',
-            }).done(function(ketqua) {
-                for(var i = 0; i < ketqua.length; i++) {
-                    var ratingString = '';
-                    for(var k = 0; k < ketqua[i].rating; k++) {
-                        ratingString = ratingString + '<i class="fas fa-star"></i>';
-                    }
-                    for(var j = 0; j < (5 - ketqua[i].rating); j++) {
-                        ratingString = ratingString + '<i class="far fa-star"></i>';
-                    }
-                    $("#wrapper").append(`<div class="box">
-                                            <div class="img">
-                                                <img src="`+ ketqua[i].image + `"/>
-                                            </div>
-                                            <div class="content">
-                                                <h2>`+ ketqua[i].name + `</h2>
-                                                <span>$`+ ketqua[i].price + `</span>
-                                                <hr/>
-                                                <p>`+ ketqua[i].description + `</p>
-                                                <button>Add to cart</button>
-                                                <button>More info</button>
-                                                <br/>
-                                                
-                                                <div>
-                                                    Rating:
-                                                    `+ ratingString +`
+            function loadData() {
+                $("#wrapper").empty();
+                $.ajax({
+                    url: 'https://5ceaab4b0c871100140bf6ed.mockapi.io/products',
+                    type: 'GET',
+                }).done(function(ketqua) {
+                    for(var i = 0; i < ketqua.length; i++) {
+                        var ratingString = '';
+                        for(var k = 0; k < ketqua[i].rating; k++) {
+                            ratingString = ratingString + '<i class="fas fa-star"></i>';
+                        }
+                        for(var j = 0; j < (5 - ketqua[i].rating); j++) {
+                            ratingString = ratingString + '<i class="far fa-star"></i>';
+                        }
+                        $("#wrapper").append(`<div class="box">
+                                                <div class="img">
+                                                    <img src="`+ ketqua[i].image + `"/>
                                                 </div>
-                                            </div>
-                                        </div>`);
-                }
+                                                <div class="content">
+                                                    <h2>`+ ketqua[i].name + `</h2>
+                                                    <span>$`+ ketqua[i].price + `</span>
+                                                    <hr/>
+                                                    <p>`+ ketqua[i].description + `</p>
+                                                    <button>Add to cart</button>
+                                                    <button>More info</button>
+                                                    <br/>
+                                                    
+                                                    <div>
+                                                        Rating:
+                                                        `+ ratingString +`
+                                                    </div>
+                                                </div>
+                                            </div>`);
+                    }
+                });
+            }
+            
+            loadData();
+            
+            $("#formNewProduct").submit(function(event){
+                event.preventDefault();
+                $.ajax({
+                    url: 'https://5ceaab4b0c871100140bf6ed.mockapi.io/products',
+                    type: 'POST',
+                    data: $("#formNewProduct").serialize(),
+                }).done(function(ketqua) {
+                    loadData();
+                });
             });
-
         });
     </script>
 </head>
 <body>
+    <form id="formNewProduct">
+        Name Product: <input type="text" name="name"/><br/>
+        Price: <input type="number" name="price"/><br/>
+        Image url: <input type="text" name="image"/><br/>
+        Description: <textarea name="description"></textarea><br/>
+        Rating: <input type="number" name="rating"/><br/>
+        <input type="submit"/>
+    </form>
     <div id="wrapper">
         
     </div>
